@@ -73,7 +73,7 @@ def MongoDb_Store_Keyword(col_name, user,tweet_count):
     df1 = keyword_search(user,tweet_count)
     client = MongoClient('mongodb://localhost:27017/')
 
-    db = client['Twitter_Username_Webscraping']
+    db = client['Twitter_Keyword_Webscraping']
     collection = db[f'{col_name}']
 
     collection.insert_many(df1.to_dict(orient='records'))
